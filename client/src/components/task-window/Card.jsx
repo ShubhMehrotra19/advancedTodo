@@ -1,30 +1,42 @@
-import React from "react";
-import { FaRegFileAlt } from "react-icons/fa";
-import { LuDownload } from "react-icons/lu";
-import { IoMdClose } from "react-icons/io";
-function Card({data, refrence}) {
+import { Ellipsis } from 'lucide-react';
+import { Flag } from 'lucide-react';
+import { Link2 } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
+function Card({cardTitle, cardDescription, priority, tags, timeLeft, links, comments}) {
     return (
-        <motion.div drag dragConstraints={refrence} whileDrag={{scale: 1.2}} dragSnapToOrigin={true} className='relative flex-shrink-0 w-60 h-72 rounded-[45px] bg-zinc-900/90 text-white py-10 px-8 overflow-hidden'>
-            <FaRegFileAlt />
-            <p className='text-sm leading-tight mt-5 font-semibold'>{data.desc}</p>
-            <div className='footer absolute bottom-0 left-0 w-full'>
-                <div className='flex items-center justify-between px-8 py-3 mb-3'>
-                    <h5>{data.filesize}</h5>
-                    <span className='w-7 h-7 bg-zinc-600 rounded-full flex items-center justify-center'>
-                    {data.close ? <IoMdClose/> : <LuDownload size=".7em" color='#fff' />}
-                        </span>
-                </div>
-                {
-                    data.tag.isOpen&& (
-                        <div className={`tag w-full py-4 ${data.tag.tagColor === "blue" ? "bg-blue-600" : "bg-green-600"} flex items-center justify-center`}>
-                            <h3 className='text-sm font-semibold'>{data.tag.tagTitle}</h3>
-                        </div>
-                    )}
-
+        <main className='w-full min-h-60 min-w-80 p-2 rounded-md bg-stone-100 flex flex-col justify-center items-center gap-5'>
+            <div className='w-full flex justify-between items-center'>
+                <h1 className='text-lg font-semibold text-stone-900'>{cardTitle}</h1>
+                <Ellipsis />
             </div>
-        </motion.div>
+
+            <div className='w-full max-h-24'>
+                <p className='text-sm text-stone-700 text-left text-ellipsis'>{cardDescription}</p>
+            </div>
+
+            <div className='w-full flex justify-between items-center'>
+                <div className='flex justify-center items-center gap-2'>
+                    <div className={`rounded bg-${priority == "high" ? "bg-red-500/60" : priority == "medium" ? "bg-purple-500/60" : "bg-green-500/60"} w-5 h-3}`}>{priority}</div>
+                    <div className={`rounded bg-${tags == "web" ? "bg-blue-400/80" : tags == "design" ? "bg-cyan-400/80" : "bg-emerald-400/80"} w-5 h-3}`}>{priority}</div>
+                </div>
+                <div className='flex gap-1 justify-center items-center'>
+                    <Flag />
+                    <p className='text-xs text-stone-600 text-left'>{timeLeft}</p>
+                </div>
+                <div className='w-full flex justify-end items-center gap-2'>
+                    <div className='flex gap-0.5 justify-center items-center'>
+                        <Link2 />
+                        <p className='text-xs text-stone-500 text-left'>{links}</p>
+                    </div>
+                    <div className='flex gap-0.5 justify-center items-center'>
+                        <MessageCircle />
+                        <p className='text-xs text-stone-500 text-left'>{comments}</p>
+                    </div>
+                </div>
+            </div>
+        </main>
     )
 }
 
-export default Card
+export default Card;
