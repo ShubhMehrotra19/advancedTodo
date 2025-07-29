@@ -5,7 +5,6 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference or default to system preference
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
@@ -20,7 +19,6 @@ const App = () => {
 
     setIsDarkMode(shouldBeDark);
     
-    // Apply theme to document
     if (shouldBeDark) {
       document.documentElement.classList.add('dark');
     } else {
@@ -42,7 +40,7 @@ const App = () => {
   };
 
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
+    <>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main className="pt-16 bg-gray-100 dark:bg-gray-900 min-h-screen transition-colors duration-300">
         <div className="max-w-7xl mx-auto p-4">
@@ -54,7 +52,7 @@ const App = () => {
           </p>
         </div>
       </main>
-    </div>
+    </>
   );
 };
 
