@@ -34,7 +34,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
                 className="h-10 w-10 rounded-full object-cover cursor-pointer 
                   transition-all duration-300 ease-in-out
                   hover:scale-110 hover:shadow-lg hover:ring-4 hover:ring-blue-200 dark:hover:ring-blue-800
-                  transform hover:rotate-3"
+                  transform"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 
                 hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
