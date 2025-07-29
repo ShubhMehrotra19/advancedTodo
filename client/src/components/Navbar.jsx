@@ -7,7 +7,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode }) => {
         <div className="flex justify-between items-center h-full">
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-gray-800 dark:text-white tracking-wide transition-colors duration-300">
-              TODO
+              PlanIt
             </h1>
           </div>
 

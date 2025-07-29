@@ -44,7 +44,7 @@ const App = () => {
     <>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main className="relative pt-16 bg-stone-50/60 dark:bg-gray-950 min-h-screen transition-colors ease-in-out duration-300 flex items-start justify-center">
-        <p className='select-none fixed text-[130px] font-bold text-stone-300/40 dark:text-gray-800/40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-colors ease-in-out duration-300'>TODO</p>
+        <p className='select-none fixed text-[130px] font-bold text-stone-300/40 dark:text-gray-800/40 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-colors ease-in-out duration-300'>PlanIt</p>
         
         {/*  this section will be holding the main content of the app */}
         <section className='fixed w-full flex justify-evenly items-start px-5 mt-8'>
